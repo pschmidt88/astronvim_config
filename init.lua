@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "catppuccin-mocha",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -27,6 +27,23 @@ return {
   },
 
   lsp = {
+    ["server-settings"] = {
+      -- example for addings schemas to yamlls
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              kubernetes = "*.yaml",
+      --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+      --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+      --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+      --       },
+            },
+          },
+        },
+      },
+    },
+
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
